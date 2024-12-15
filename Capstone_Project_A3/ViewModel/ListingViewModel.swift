@@ -74,24 +74,24 @@ class ListingViewModel: ObservableObject {
         }
     }
 
-    func geocodeAddress(address: String) {
-        geocoder.geocodeAddressString(address) { [weak self] placemarks, error in
-            guard let self = self else { return }
-
-            if let error = error {
-                self.alertMessage = "Geocoding failed: \(error.localizedDescription)"
-                self.showingAlert = true
-                return
-            }
-
-            if let placemark = placemarks?.first,
-               let location = placemark.location {
-                self.geocodedAddress = "\(location.coordinate.latitude), \(location.coordinate.longitude)"
-            } else {
-                self.alertMessage = "Unable to find coordinates for the address."
-                self.showingAlert = true
+    func validateAddress(_ address: String, completion: @escaping (CLLocationCoordinate2D?) -> Void) {
+            geocoder.geocodeAddressString(address) { placemarks, error in
+                if let error = error {
+                    self.alertMessage = "Invalid Address: \(error.localizedDescription)"
+                    self.showingAlert = true
+                    completion(nil)
+                    return
+                }
+                
+                if let coordinate = placemarks?.first?.location?.coordinate {
+                    // Valid address, return the coordinates
+                    completion(coordinate)
+                } else {
+                    self.alertMessage = "Could not find a valid location for the entered address."
+                    self.showingAlert = true
+                    completion(nil)
+                }
             }
         }
-    }
 }
 

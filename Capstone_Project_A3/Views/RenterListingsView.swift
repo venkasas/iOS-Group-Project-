@@ -61,7 +61,7 @@ struct RenterListingsView: View {
                     .padding(5)
                 }
             }
-            .navigationTitle("Available Listings")
+            //.navigationTitle("Available Listings")
             .alert(isPresented: $viewModel.showingAlert) {
                 Alert(title: Text("Message"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("OK")))
             }

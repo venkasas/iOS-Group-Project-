@@ -157,15 +157,4 @@ struct EditListingView: View {
     }
 }
 
-struct EditListingView_Previews: PreviewProvider {
-    static var previews: some View {
-        let context = PersistenceController.shared.container.viewContext
-        let listing = Listing(context: context)
-        listing.name = "Sample Name"
-        listing.address = "Sample Address"
-        listing.location = "Sample Location"
-        listing.price = "$10"
-        listing.listingDescription = "No loud sounds"
-        return EditListingView(listing: listing).environment(\.managedObjectContext, context)
-    }
-}
+

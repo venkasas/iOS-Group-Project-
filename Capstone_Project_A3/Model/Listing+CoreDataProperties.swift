@@ -26,6 +26,10 @@ extension Listing {
     @NSManaged public var isBooked: Bool
     @NSManaged public var bookedBy: String?
     @NSManaged public var bookingDate: Date?
+    @NSManaged public var latitude: Double
+    @NSManaged public var longitude: Double
+    @NSManaged public var locationLatitude: Double
+    @NSManaged public var locationLongitude: Double
 
 }
 

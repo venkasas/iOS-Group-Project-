@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D208A8542D0F1E5C00485C12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D208A84C2D0F1E5C00485C12 /* ContentView.swift */; };
+		D208A8842D0F93A300485C12 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D208A8832D0F93A300485C12 /* WidgetKit.framework */; };
+		D208A8862D0F93A300485C12 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D208A8852D0F93A300485C12 /* SwiftUI.framework */; };
+		D208A8952D0F93A500485C12 /* ParkingSpotWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D208A8812D0F93A200485C12 /* ParkingSpotWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2B57BC72CC87BE300375FE0 /* Capstone_Project_A3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B57BC62CC87BE300375FE0 /* Capstone_Project_A3App.swift */; };
 		D2B57BCB2CC87BE500375FE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B57BCA2CC87BE500375FE0 /* Assets.xcassets */; };
 		D2B57BCE2CC87BE500375FE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B57BCD2CC87BE500375FE0 /* Preview Assets.xcassets */; };
@@ -16,8 +19,35 @@
 		D2B57BE62CC8809A00375FE0 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B57BE52CC8809A00375FE0 /* PersistenceController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D208A8932D0F93A500485C12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2B57BBB2CC87BE300375FE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D208A8802D0F93A200485C12;
+			remoteInfo = ParkingSpotWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D208A89A2D0F93A500485C12 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D208A8952D0F93A500485C12 /* ParkingSpotWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		D208A84C2D0F1E5C00485C12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D208A8812D0F93A200485C12 /* ParkingSpotWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ParkingSpotWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D208A8832D0F93A300485C12 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		D208A8852D0F93A300485C12 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		D2B57BC32CC87BE300375FE0 /* Capstone_Project_A3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone_Project_A3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B57BC62CC87BE300375FE0 /* Capstone_Project_A3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capstone_Project_A3App.swift; sourceTree = "<group>"; };
 		D2B57BCA2CC87BE500375FE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -27,13 +57,33 @@
 		D2B57BE52CC8809A00375FE0 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D208A8962D0F93A500485C12 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = D208A8802D0F93A200485C12 /* ParkingSpotWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		D208A8872D0F93A300485C12 /* ParkingSpotWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D208A8962D0F93A500485C12 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ParkingSpotWidget; sourceTree = "<group>"; };
 		D2F2F7352D0B648C00435FAA /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
 		D2F2F7362D0B64ED00435FAA /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
 		D2F2F73A2D0B66D500435FAA /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D208A87E2D0F93A200485C12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D208A8862D0F93A300485C12 /* SwiftUI.framework in Frameworks */,
+				D208A8842D0F93A300485C12 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2B57BC02CC87BE300375FE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -44,10 +94,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D208A8822D0F93A300485C12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D208A8832D0F93A300485C12 /* WidgetKit.framework */,
+				D208A8852D0F93A300485C12 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D2B57BBA2CC87BE300375FE0 = {
 			isa = PBXGroup;
 			children = (
 				D2B57BC52CC87BE300375FE0 /* Capstone_Project_A3 */,
+				D208A8872D0F93A300485C12 /* ParkingSpotWidget */,
+				D208A8822D0F93A300485C12 /* Frameworks */,
 				D2B57BC42CC87BE300375FE0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D2B57BC32CC87BE300375FE0 /* Capstone_Project_A3.app */,
+				D208A8812D0F93A200485C12 /* ParkingSpotWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +150,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D208A8802D0F93A200485C12 /* ParkingSpotWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D208A8972D0F93A500485C12 /* Build configuration list for PBXNativeTarget "ParkingSpotWidgetExtension" */;
+			buildPhases = (
+				D208A87D2D0F93A200485C12 /* Sources */,
+				D208A87E2D0F93A200485C12 /* Frameworks */,
+				D208A87F2D0F93A200485C12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D208A8872D0F93A300485C12 /* ParkingSpotWidget */,
+			);
+			name = ParkingSpotWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = ParkingSpotWidgetExtension;
+			productReference = D208A8812D0F93A200485C12 /* ParkingSpotWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D2B57BC22CC87BE300375FE0 /* Capstone_Project_A3 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2B57BD62CC87BE500375FE0 /* Build configuration list for PBXNativeTarget "Capstone_Project_A3" */;
@@ -95,10 +179,12 @@
 				D2B57BBF2CC87BE300375FE0 /* Sources */,
 				D2B57BC02CC87BE300375FE0 /* Frameworks */,
 				D2B57BC12CC87BE300375FE0 /* Resources */,
+				D208A89A2D0F93A500485C12 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D208A8942D0F93A500485C12 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				D2F2F7352D0B648C00435FAA /* Model */,
@@ -117,9 +203,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					D208A8802D0F93A200485C12 = {
+						CreatedOnToolsVersion = 16.1;
+					};
 					D2B57BC22CC87BE300375FE0 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -139,11 +228,19 @@
 			projectRoot = "";
 			targets = (
 				D2B57BC22CC87BE300375FE0 /* Capstone_Project_A3 */,
+				D208A8802D0F93A200485C12 /* ParkingSpotWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D208A87F2D0F93A200485C12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2B57BC12CC87BE300375FE0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,6 +253,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D208A87D2D0F93A200485C12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2B57BBF2CC87BE300375FE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,7 +274,71 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D208A8942D0F93A500485C12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D208A8802D0F93A200485C12 /* ParkingSpotWidgetExtension */;
+			targetProxy = D208A8932D0F93A500485C12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D208A8982D0F93A500485C12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 574AUK9VYX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ParkingSpotWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ParkingSpotWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "venkasas.sheridan.Capstone-Project-A3.ParkingSpotWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D208A8992D0F93A500485C12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 574AUK9VYX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ParkingSpotWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ParkingSpotWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "venkasas.sheridan.Capstone-Project-A3.ParkingSpotWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D2B57BD42CC87BE500375FE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -351,6 +519,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D208A8972D0F93A500485C12 /* Build configuration list for PBXNativeTarget "ParkingSpotWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D208A8982D0F93A500485C12 /* Debug */,
+				D208A8992D0F93A500485C12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D2B57BBE2CC87BE300375FE0 /* Build configuration list for PBXProject "Capstone_Project_A3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
