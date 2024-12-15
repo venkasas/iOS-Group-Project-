@@ -1,0 +1,8 @@
+{
+  "storage": {
+    "Listings": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}

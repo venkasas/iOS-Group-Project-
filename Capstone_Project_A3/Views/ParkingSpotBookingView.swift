@@ -137,9 +137,9 @@ struct ParkingSpotBookingView: View {
 }
 
 
-struct ParkingSpotBookingView_Previews: PreviewProvider {
-    static var previews: some View {
-        let context = PersistenceController.shared.container.viewContext
-        return ParkingSpotBookingView().environment(\.managedObjectContext, context)
-    }
-}
+//struct ParkingSpotBookingView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let context = PersistenceController.shared.container.viewContext
+//        return ParkingSpotBookingView().environment(\.managedObjectContext, context)
+//    }
+//}

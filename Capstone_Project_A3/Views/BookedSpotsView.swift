@@ -103,9 +103,9 @@ struct BookedSpotDetailView: View {
     }
 }
 
-struct BookedSpotsView_Previews: PreviewProvider {
-    static var previews: some View {
-        let context = PersistenceController.shared.container.viewContext
-        return BookedSpotsView().environment(\.managedObjectContext, context)
-    }
-}
+//struct BookedSpotsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let context = PersistenceController.shared.container.viewContext
+//        return BookedSpotsView().environment(\.managedObjectContext, context)
+//    }
+//}

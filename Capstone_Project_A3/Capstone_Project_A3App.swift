@@ -13,8 +13,13 @@ struct Capstone_Project_A3App: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
+
+
+
+
+

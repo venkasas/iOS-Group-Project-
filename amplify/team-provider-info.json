@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-parkandperk-dev-9d783-authRole",
+      "UnauthRoleArn": "arn:aws:iam::746669231021:role/amplify-parkandperk-dev-9d783-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::746669231021:role/amplify-parkandperk-dev-9d783-authRole",
+      "Region": "ca-central-1",
+      "DeploymentBucketName": "amplify-parkandperk-dev-9d783-deployment",
+      "UnauthRoleName": "amplify-parkandperk-dev-9d783-unauthRole",
+      "StackName": "amplify-parkandperk-dev-9d783",
+      "StackId": "arn:aws:cloudformation:ca-central-1:746669231021:stack/amplify-parkandperk-dev-9d783/f7fb8d80-ac1a-11ef-92fd-02e091bc22e1",
+      "AmplifyAppId": "d3kcmhv5nvjhz2"
+    },
+    "categories": {
+      "storage": {
+        "Listings": {}
+      }
+    }
+  }
+}

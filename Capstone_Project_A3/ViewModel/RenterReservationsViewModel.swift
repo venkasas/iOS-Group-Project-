@@ -6,13 +6,28 @@
 //
 
 import SwiftUI
+import CoreData
 
-struct RenterReservationsViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class RenterReservationsViewModel: ObservableObject {
+    @Published var reservedListings: [Listing] = []
+
+    private let context: NSManagedObjectContext
+    private let currentUser: String = "Current User" // Replace with actual user identifier
+
+    init(context: NSManagedObjectContext) {
+        self.context = context
+        fetchReservations()
+    }
+
+    func fetchReservations() {
+        let request: NSFetchRequest<Listing> = Listing.fetchRequest()
+        request.predicate = NSPredicate(format: "isBooked == true AND bookedBy == %@", currentUser)
+
+        do {
+            reservedListings = try context.fetch(request)
+        } catch {
+            print("Error fetching reservations: \(error.localizedDescription)")
+        }
     }
 }
 
-#Preview {
-    RenterReservationsViewModel()
-}

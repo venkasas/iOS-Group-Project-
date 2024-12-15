@@ -21,39 +21,39 @@ struct EditListingView: View {
     @State private var availabilityDate: Date = Date()
     @State private var availabilityFromTime: Date = Date()
     @State private var availabilityToTime: Date = Date()
-    @State private var listingDescription: String = ""
+    @State private var listingDescription: String = "" // New state for description
     
     @State private var showingAlert = false
     @State private var alertMessage = ""
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Edit Listing")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding(.bottom, 8)
+//            Text("Edit Listing")
+//                .font(.largeTitle)
+//                .fontWeight(.bold)
+//                .padding(.bottom, 8)
             
             Form {
                 Section(header: Text("Listing Details")) {
                     TextField("Your Name", text: $name)
-                        .padding()
+                        .padding(8)
                         .background(Color(UIColor.systemGray6))
                         .cornerRadius(8)
                     TextField("Address", text: $address)
-                        .padding()
+                        .padding(8)
                         .background(Color(UIColor.systemGray6))
                         .cornerRadius(8)
                     TextField("Location", text: $location)
-                        .padding()
+                        .padding(8)
                         .background(Color(UIColor.systemGray6))
                         .cornerRadius(8)
                     TextField("Price", text: $price)
                         .keyboardType(.decimalPad)
-                        .padding()
+                        .padding(8)
                         .background(Color(UIColor.systemGray6))
                         .cornerRadius(8)
-                    DatePicker("Dates Available", selection: $availabilityDate, displayedComponents: .date)
-                        .padding()
+                    DatePicker("Date Available", selection: $availabilityDate, displayedComponents: .date)
+                        .padding(8)
                         .background(Color(UIColor.systemGray6))
                         .cornerRadius(8)
                     HStack {
@@ -63,9 +63,17 @@ struct EditListingView: View {
                         DatePicker("To", selection: $availabilityToTime, displayedComponents: .hourAndMinute)
                             .labelsHidden()
                     }
-                    .padding()
+                    .padding(8)
                     .background(Color(UIColor.systemGray6))
                     .cornerRadius(8)
+                }
+                
+                Section(header: Text("Description")) {
+                    TextEditor(text: $listingDescription)
+                        .frame(height: 120)
+                        .padding(8)
+                        .background(Color(UIColor.systemGray6))
+                        .cornerRadius(8)
                 }
             }
             .background(Color.white)
@@ -96,6 +104,7 @@ struct EditListingView: View {
             address = listing.address ?? ""
             location = listing.location ?? ""
             price = listing.price ?? ""
+            listingDescription = listing.listingDescription ?? "" // Load description
             
             // Parse availability string to extract dates and times
             if let availability = listing.availability {
@@ -115,8 +124,6 @@ struct EditListingView: View {
                     }
                 }
             }
-            
-            listingDescription = listing.listingDescription ?? ""
         }
     }
     
@@ -125,7 +132,8 @@ struct EditListingView: View {
         listing.address = address
         listing.location = location
         listing.price = price
-        
+        listing.listingDescription = listingDescription // Save description
+
         // Format the availability string
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -157,6 +165,7 @@ struct EditListingView_Previews: PreviewProvider {
         listing.address = "Sample Address"
         listing.location = "Sample Location"
         listing.price = "$10"
+        listing.listingDescription = "No loud sounds"
         return EditListingView(listing: listing).environment(\.managedObjectContext, context)
     }
 }

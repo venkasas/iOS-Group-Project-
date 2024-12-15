@@ -2,37 +2,57 @@ import SwiftUI
 import CoreData
 
 struct MyListingsView: View {
-    @StateObject private var viewModel: ListingViewModel
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Listing.timestamp, ascending: true)],
+        animation: .default)
+    private var listings: FetchedResults<Listing>
 
-    init(context: NSManagedObjectContext) {
-        _viewModel = StateObject(wrappedValue: ListingViewModel(context: context))
-    }
+    let userRole: UserRole // Role to determine permissions
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(viewModel.listings) { listing in
-                    VStack(alignment: .leading) {
-                        Text(listing.name ?? "Unknown Name")
-                            .font(.headline)
-                        Text(listing.location ?? "Unknown Location")
-                            .font(.subheadline)
+        List {
+            ForEach(listings) { listing in
+                VStack(alignment: .leading) {
+                    Text(listing.name ?? "Unknown Name")
+                        .font(.headline)
+                    Text("Location: \(listing.address ?? "Unknown Address")")
+                        .font(.subheadline)
+                    Text("Price: $ \(listing.price ?? "N/A")")
+                        .font(.caption)
+
+                    // Edit option only for listers
+                    if userRole == .lister {
+                        NavigationLink(destination: EditListingView(listing: listing)) {
+                            Text("Edit Listing")
+                                .foregroundColor(.blue)
+                        }
                     }
                 }
-                .onDelete { indexSet in
-                    indexSet.forEach { index in
-                        let listing = viewModel.listings[index]
-                        viewModel.deleteListing(listing)
-                    }
-                }
+                .padding()
+
+                // Delete option only for listers
             }
-            .navigationTitle("My Listings")
-            .toolbar {
+            .onDelete(perform: userRole == .lister ? deleteListing : nil)
+        }
+        .navigationTitle("View/Edit Listings")
+        .toolbar {
+            if userRole == .lister {
                 EditButton()
-            }
-            .alert(isPresented: $viewModel.showingAlert) {
-                Alert(title: Text("Error"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("OK")))
             }
         }
     }
+
+    private func deleteListing(at offsets: IndexSet) {
+        for index in offsets {
+            let listing = listings[index]
+            viewContext.delete(listing)
+        }
+        do {
+            try viewContext.save()
+        } catch {
+            print("Error deleting listing: \(error.localizedDescription)")
+        }
+    }
 }
+

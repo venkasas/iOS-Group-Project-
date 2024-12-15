@@ -1,0 +1,14 @@
+{
+  "resourceName": "Listings",
+  "tableName": "Listings",
+  "partitionKey": {
+    "fieldName": "listingId",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "booking_date",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

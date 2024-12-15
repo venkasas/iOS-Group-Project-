@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Booking)
+@objc(Booking) // Ensure this is marked as @objc to resolve ambiguity
 public class Booking: NSManagedObject {
 
 }

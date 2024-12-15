@@ -2,8 +2,7 @@ import SwiftUI
 import CoreData
 
 struct AddListingView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @StateObject private var viewModel: ListingViewModel
+    private let context: NSManagedObjectContext
 
     @State private var name: String = ""
     @State private var address: String = ""
@@ -13,9 +12,11 @@ struct AddListingView: View {
     @State private var availabilityFromTime: Date = Date()
     @State private var availabilityToTime: Date = Date()
     @State private var listingDescription: String = ""
+    @State private var alertMessage = ""
+    @State private var showingAlert = false
 
     init(context: NSManagedObjectContext) {
-        _viewModel = StateObject(wrappedValue: ListingViewModel(context: context))
+        self.context = context
     }
 
     var body: some View {
@@ -26,32 +27,46 @@ struct AddListingView: View {
                 TextField("Location", text: $location)
                 TextField("Price", text: $price).keyboardType(.decimalPad)
                 DatePicker("Date Available", selection: $availabilityDate, displayedComponents: .date)
-                DatePicker("From Time", selection: $availabilityFromTime, displayedComponents: .hourAndMinute)
-                DatePicker("To Time", selection: $availabilityToTime, displayedComponents: .hourAndMinute)
+                HStack {
+                    DatePicker("From Time", selection: $availabilityFromTime, displayedComponents: .hourAndMinute)
+                    Text("to")
+                    DatePicker("To Time", selection: $availabilityToTime, displayedComponents: .hourAndMinute)
+                }
                 TextField("Description", text: $listingDescription)
             }
 
-            Button("Geocode Address") {
-                viewModel.geocodeAddress(address: address)
-            }
-            .padding()
-            .alert(isPresented: $viewModel.showingAlert) {
-                Alert(title: Text("Error"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("OK")))
-            }
-
             Button("Post Listing") {
-                let availability = "\(availabilityDate) from \(availabilityFromTime) to \(availabilityToTime)"
-                viewModel.addListing(
-                    name: name,
-                    address: address,
-                    location: viewModel.geocodedAddress,
-                    price: price,
-                    availability: availability,
-                    description: listingDescription
-                )
+                postListing()
             }
             .padding()
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Message"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            }
         }
         .navigationTitle("Post a Parking Space")
+    }
+
+    private func postListing() {
+        guard !name.isEmpty, !address.isEmpty, !price.isEmpty else {
+            alertMessage = "Please fill out all fields."
+            showingAlert = true
+            return
+        }
+
+        let newListing = Listing(context: context)
+        newListing.name = name
+        newListing.address = address
+        newListing.location = location
+        newListing.price = price
+        newListing.listingDescription = listingDescription
+        newListing.availability = "\(availabilityDate) from \(availabilityFromTime) to \(availabilityToTime)"
+
+        do {
+            try context.save()
+            alertMessage = "Listing posted successfully!"
+        } catch {
+            alertMessage = "Failed to save listing: \(error.localizedDescription)"
+        }
+        showingAlert = true
     }
 }

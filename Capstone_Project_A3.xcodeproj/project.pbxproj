@@ -3,27 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D208A8542D0F1E5C00485C12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D208A84C2D0F1E5C00485C12 /* ContentView.swift */; };
 		D2B57BC72CC87BE300375FE0 /* Capstone_Project_A3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B57BC62CC87BE300375FE0 /* Capstone_Project_A3App.swift */; };
-		D2B57BC92CC87BE300375FE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B57BC82CC87BE300375FE0 /* ContentView.swift */; };
 		D2B57BCB2CC87BE500375FE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B57BCA2CC87BE500375FE0 /* Assets.xcassets */; };
 		D2B57BCE2CC87BE500375FE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B57BCD2CC87BE500375FE0 /* Preview Assets.xcassets */; };
-		D2B57BD02CC87BE500375FE0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B57BCF2CC87BE500375FE0 /* Persistence.swift */; };
 		D2B57BD32CC87BE500375FE0 /* Capstone_Project_A3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2B57BD12CC87BE500375FE0 /* Capstone_Project_A3.xcdatamodeld */; };
+		D2B57BDE2CC87D6C00375FE0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B57BDD2CC87D6C00375FE0 /* CoreDataStack.swift */; };
+		D2B57BE62CC8809A00375FE0 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B57BE52CC8809A00375FE0 /* PersistenceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D208A84C2D0F1E5C00485C12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D2B57BC32CC87BE300375FE0 /* Capstone_Project_A3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone_Project_A3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B57BC62CC87BE300375FE0 /* Capstone_Project_A3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capstone_Project_A3App.swift; sourceTree = "<group>"; };
-		D2B57BC82CC87BE300375FE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D2B57BCA2CC87BE500375FE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2B57BCD2CC87BE500375FE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D2B57BCF2CC87BE500375FE0 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		D2B57BD22CC87BE500375FE0 /* Capstone_Project_A3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Capstone_Project_A3.xcdatamodel; sourceTree = "<group>"; };
+		D2B57BDD2CC87D6C00375FE0 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D2B57BE52CC8809A00375FE0 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D2F2F7352D0B648C00435FAA /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+		D2F2F7362D0B64ED00435FAA /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
+		D2F2F73A2D0B66D500435FAA /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D2B57BC02CC87BE300375FE0 /* Frameworks */ = {
@@ -55,10 +63,14 @@
 		D2B57BC52CC87BE300375FE0 /* Capstone_Project_A3 */ = {
 			isa = PBXGroup;
 			children = (
+				D2F2F73A2D0B66D500435FAA /* Views */,
+				D2F2F7362D0B64ED00435FAA /* ViewModel */,
+				D2F2F7352D0B648C00435FAA /* Model */,
 				D2B57BC62CC87BE300375FE0 /* Capstone_Project_A3App.swift */,
-				D2B57BC82CC87BE300375FE0 /* ContentView.swift */,
+				D2B57BDD2CC87D6C00375FE0 /* CoreDataStack.swift */,
+				D208A84C2D0F1E5C00485C12 /* ContentView.swift */,
+				D2B57BE52CC8809A00375FE0 /* PersistenceController.swift */,
 				D2B57BCA2CC87BE500375FE0 /* Assets.xcassets */,
-				D2B57BCF2CC87BE500375FE0 /* Persistence.swift */,
 				D2B57BD12CC87BE500375FE0 /* Capstone_Project_A3.xcdatamodeld */,
 				D2B57BCC2CC87BE500375FE0 /* Preview Content */,
 			);
@@ -87,6 +99,11 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D2F2F7352D0B648C00435FAA /* Model */,
+				D2F2F7362D0B64ED00435FAA /* ViewModel */,
+				D2F2F73A2D0B66D500435FAA /* Views */,
 			);
 			name = Capstone_Project_A3;
 			productName = Capstone_Project_A3;
@@ -143,10 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B57BDE2CC87D6C00375FE0 /* CoreDataStack.swift in Sources */,
 				D2B57BD32CC87BE500375FE0 /* Capstone_Project_A3.xcdatamodeld in Sources */,
-				D2B57BD02CC87BE500375FE0 /* Persistence.swift in Sources */,
-				D2B57BC92CC87BE300375FE0 /* ContentView.swift in Sources */,
 				D2B57BC72CC87BE300375FE0 /* Capstone_Project_A3App.swift in Sources */,
+				D208A8542D0F1E5C00485C12 /* ContentView.swift in Sources */,
+				D2B57BE62CC8809A00375FE0 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
